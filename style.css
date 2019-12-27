@@ -1,0 +1,14 @@
+* {
+	box-sizing: border-box;
+}
+
+body{
+	padding: 5px;
+}
+
+#results{
+	width: 20px;
+	height: 20px;
+	border: 1px solid cyan;
+	position: relative;
+}
