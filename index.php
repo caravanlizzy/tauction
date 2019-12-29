@@ -18,7 +18,7 @@
 require 'randomizer.php';
 
 $factions = array(new Faction('giants', 'red'), new Faction('chaosmagicians', 'red'),
-	new Faction('engineers', 'grey'), new Faction('dwarves', 'red'), 
+	new Faction('engineers', 'gray'), new Faction('dwarves', 'gray'), 
 	new Faction('witches', 'green'), new Faction('auren', 'green'),
 	new Faction('mermaids', 'blue'), new Faction('swarmlings', 'blue'), 
 	new Faction('alchemists', 'black'), new Faction('darklings', 'black'), 
@@ -27,7 +27,16 @@ $factions = array(new Faction('giants', 'red'), new Faction('chaosmagicians', 'r
 	new Faction('shapeshifters', 'variable'), new Faction('riverwalkers', 'variable'), 
 	new Faction('acolytes', 'variable'), new Faction('dragonlords', 'variable'),
 	new Faction('icemaidens', 'variable'), new Faction('yetis', 'variable'));
-$randomizer = new Randomizer($factions);
+
+$pairings = array(	"icemaidens"	=>	"yetis",
+					"yetis"			=>	"icemaidens",
+					"shapeshifters"	=>	"riverwalkers",
+					"riverwalkers"	=>	"shapeshifters",
+					"acolytes"		=>	"dragonlords",
+					"dragonlords"	=>	"acolytes"
+);
+
+$randomizer = new Randomizer($factions, $pairings);
 $randomizer->run();
 $randomizer->display_results();	
 
